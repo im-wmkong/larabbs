@@ -33,9 +33,9 @@ Route::get('email/verify', 'Auth\VerificationController@show')->name('verificati
 Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
-Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
-Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
-
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
+
+Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
+Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
